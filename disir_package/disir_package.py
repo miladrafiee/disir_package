@@ -573,7 +573,7 @@ def main_disir(subunit_interactions_path, gene_names_all_path, cell_type_labels_
                  thewriter.writerow([graph_data_nodes.iloc[row,0], graph_data_nodes.iloc[row,1], graph_data_nodes.iloc[row,2], graph_data_nodes.iloc[row,3], graph_data_nodes.iloc[row,4]])
         print()
     
-def run_disir():
+def run_disir_package():
     arguments = argument_parser()
     main_disir(**arguments)
     
