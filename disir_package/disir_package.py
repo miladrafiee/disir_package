@@ -28,7 +28,7 @@ import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import matplotlib.patches as pch
 from matplotlib import rcParams
-# from statsmodels.stats.multitest import multipletests
+from statsmodels.stats.multitest import multipletests
 
 from disir_package.common import argument_parser
 
@@ -275,7 +275,7 @@ def build_interactions_graph_subunit(p_values_matrix,
 
     p_values_matrix = p_values_matrix.iloc[index_matched_gene_names, :]
     p_values_matrix = p_values_matrix.values
-    # p_values_matrix = np.array([multipletests(i, method='fdr_bh')[1] for i in p_values_matrix])
+    p_values_matrix = np.array([multipletests(i, method='fdr_bh')[1] for i in p_values_matrix])
 
     expression_celltype_matrix = expression_celltype_matrix.iloc[index_matched_gene_names, :]
     expression_celltype_matrix = expression_celltype_matrix.values
