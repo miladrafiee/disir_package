@@ -9,7 +9,7 @@ setup(
               'disir_package.common'],
     package_dir={'disir_package': 'disir_package'},
     entry_points={'console_scripts':
-                      ['disir_package=disir_package.disir_package:run_disir']
+                      ['disir_package=disir_package.disir_package:run_disir_package']
                   }
 )
 
