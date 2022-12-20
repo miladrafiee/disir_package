@@ -33,33 +33,30 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 ``` 
 
 ## File formatting
-CytoSPACE requires 5 files as input. All files should be provided in tab-delimited tabular input format (saved as .txt) with no double quotations. Further formatting details for each input file are specified below. For helper scripts to prepare input files directly from Seurat objects, refer to the section [Preprocessing: Input file preparation](#preprocessing-input-file-preparation).
+DiSiR requires 4 files as input. All files should be provided in comma separated values input format (saved as .csv) with no double quotations. Further formatting details for each input file are specified below. 
 
 1. __A scRNA-seq gene expression file:__
-- The matrix must be genes (rows) by cells (columns).
-- The first row must contain the single cell IDs and the first column must contain the gene names.
-- The first column (gene names) must have a header.
+- The matrix must be genes (rows) by cells (columns) without single cell IDs and gene names (they will be provided as another input). 
+- The matrix must not have a header and row names.
 - The gene expression data should be represented as non-normalized counts. 
-<img src="https://github.com/digitalcytometry/cytospace/blob/main/images/scRNAfile.png" width="800"> 
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/scRNAfile.png" width="800"> 
 
 2. __A cell type label file:__
-- Cell type labels corresponding to the single cell IDs in the scRNA-seq gene expression matrix. 
-- Cell type label strings should not have special characters. 
-- The table should contain two columns, where column 1 contains the single cell IDs corresponding to the columns of the scRNA-seq matrix and column 2 contains the corresponding cell type labels.
-- The columns must have a header. 
-<img src="https://github.com/digitalcytometry/cytospace/blob/main/images/celllabelfile.png" width="250"> 
+- Cell type labels corresponding to the single cells (columns) in the scRNA-seq gene expression matrix with the same order. 
+- The table should contain only one column which contains the cell types corresponding to the single cells in the scRNA-seq gene expression matrix with the same order.
+- The columns must not have a header and row names. 
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/celllabelfile.png" width="250"> 
 
-3. __A spatial transcriptomics (ST) gene expression file:__
-- The matrix must be genes (rows) by ST spots (columns).
-- The first row must contain the ST spot IDs and the first column must contain the gene names.
-- The first column (gene names) must have a header.
-- The gene expression data should be represented as non-normalized counts. 
-<img src="https://github.com/digitalcytometry/cytospace/blob/main/images/STdatafile.png" width="800"> 
+3. __A gene names file:__
+- Genes names corresponing to the features (rows) in the scRNA-seq gene expression matrix with the same order.
+- The table should contain only one column which contains the gene names corresponding to the features (rows) in the scRNA-seq gene expression matrix with the same order.
+- The columns must not have a header and row names.
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/genesfile.png" width="800"> 
 
 4. __A spatial transcriptomics coordinates file:__
 - A table consisting of 3 columns, where the first column contains the ST spot IDs corresponding to and in the same order as the columns of the ST gene expression matrix, and column 2 and 3 contain the row and column indices of the spatial transcriptomics data, respectively. 
 - The columns must have a header. 
-<img src="https://github.com/digitalcytometry/cytospace/blob/main/images/STcoordfile.png" width="250"> 
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/interactionsfile.png" width="250"> 
 
 5. __A file with cell type fraction estimates:__
 - A table consisting of 2 rows, where the first row is the cell type labels, and the second row is the cell fractions of each cell type represented as proportions between 0 and 1. The first column is the row names.
