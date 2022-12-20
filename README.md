@@ -13,36 +13,24 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 
 2. Clone this repository:
 ```bash
-  git clone https://github.com/digitalcytometry/cytospace
+  git clone https://github.com/miladrafiee/disir_package.git.
 ```
-
 3. Navigate to `disir_package` directory:
 ```bash
-  cd cytospace
+  cd disir_package
 ```
-4. (5-10 minutes) Create a conda environment with the required dependencies:
+4. Create a conda environment with the required dependencies:
 ```bash
   conda env create -f environment.yml
 ```
-5. Activate the `cytospace` environment you just created:
+5. Activate the `disir_package` environment you just created:
 ```bash
-  conda activate cytospace
+  conda activate disir_package
 ``` 
-
-6. (~30 seconds) Install CytoSPACE by executing:
+6. Install DiSiR by executing:
 ```bash
   pip install .
 ``` 
-
-7. (Recommended, ~1 minute) Install package `lapjv` by executing:
-```bash
-  pip install lapjv==1.3.14
-```
-We highly recommend you install this package, which provides a fast implementation of the default core optimization algorithm within CytoSPACE. However, some systems may not accommodate it as it requires CPU support for AVX2 instructions. To determine if your system supports this package, it is generally easiest to simply attempt to install it as above. If it installs without problems, your system will support it! If you run into an error, it is likely your system does not support it, and you can simply use one of the other options we have provided. See __Solver options__ below for details. Please note that if the package installs but you receive an "illegal instruction" error while running CytoSPACE, you may be able to build the package instead with the following command:
-```bash
-   pip3 install git+https://github.com/src-d/lapjv
-```
-For more information, see the <a href="https://pypi.org/project/lapjv/" target="_blank">lapjv documentation page</a>. 
 
 ## File formatting
 CytoSPACE requires 5 files as input. All files should be provided in tab-delimited tabular input format (saved as .txt) with no double quotations. Further formatting details for each input file are specified below. For helper scripts to prepare input files directly from Seurat objects, refer to the section [Preprocessing: Input file preparation](#preprocessing-input-file-preparation).
