@@ -1,6 +1,6 @@
 # DiSiR: a Software framework to identify ligand-receptor interactions at subunit level from single-cell RNA-sequencing data
 
-<img src="https://github.com/miladrafiee/disir_packages/blob/main/Data/ReadMe_images/disri_Method.png" width="1000">
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/disir_Method.png" width="1000">
 
 **DiSiR** (DiSiR: Dimer Signal Receptor Analysis) is an ultrafast and easy-to-use software framework to investigate how individual cells are interacting with each other by analyzing signaling pathways of multi-subunit ligand-activated receptors from scRNA-seq data, even for the genes that are not listed in available databases. DiSiR has been built upon the framework from existing expression permutation-based methods such as CellPhoneDB (Vento-Tormo, Efremova et al. 2018, Efremova, Vento-Tormo et al. 2020) and has been specifically optimized to analyze and also visualize complex pathways involving multi-subunit receptor complexes with multi-subunit ligands for specific individual user-defined ligand-receptor input.
 
