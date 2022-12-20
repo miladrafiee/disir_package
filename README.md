@@ -33,7 +33,7 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 ``` 
 
 ## File formatting
-DiSiR requires 4 files as input. All files should be provided in comma separated values input format (saved as .csv) with no double quotations. Further formatting details for each input file are specified below. 
+DiSiR requires 4 files as input. All files should be provided in comma-separated values input format (saved as .csv) with no double quotations. Further formatting details for each input file are specified below. 
 
 1. __A scRNA-seq gene expression file:__
 - The matrix must be genes (rows) by cells (columns) without single cell IDs and gene names (they will be provided as another input). 
@@ -47,83 +47,28 @@ DiSiR requires 4 files as input. All files should be provided in comma separated
 - The columns must not have a header and row names. 
 <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/celllabelfile.png" width="250"> 
 
-3. __A gene names file:__
+3. __A gene name file:__
 - Genes names corresponing to the features (rows) in the scRNA-seq gene expression matrix with the same order.
-- The table should contain only one column which contains the gene names corresponding to the features (rows) in the scRNA-seq gene expression matrix with the same order.
+- The table should contain only one column that contains the gene names corresponding to the features (rows) in the scRNA-seq gene expression matrix with the same order.
 - The columns must not have a header and row names.
 <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/genesfile.png" width="800"> 
 
-4. __A spatial transcriptomics coordinates file:__
-- A table consisting of 3 columns, where the first column contains the ST spot IDs corresponding to and in the same order as the columns of the ST gene expression matrix, and column 2 and 3 contain the row and column indices of the spatial transcriptomics data, respectively. 
-- The columns must have a header. 
+4. __A ligand-receptor interaction file:__
+- User also needs to provide a comma-separated value (csv) file" that contains one interaction per line, for example: IL6 | IL6, IL6 | IL6ST (in this example, the IL6R and IL6ST are two receptor subunits of the ligand IL6).
+- The columns must not have a header and row names.
 <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/interactionsfile.png" width="250"> 
 
-5. __A file with cell type fraction estimates:__
-- A table consisting of 2 rows, where the first row is the cell type labels, and the second row is the cell fractions of each cell type represented as proportions between 0 and 1. The first column is the row names.
-- __The first row of cell type labels must match the labels present in the cell type label file.__
-- The cell type fractions should sum to one.  
-- Cell type fractions can be generated via any method for fractional abundance estimation. We provide one such implementation using Spatial Seurat in `get_cellfracs_seuratv3.R`. For further details, see section "__Preprocessing__" below.
-<img src="https://github.com/digitalcytometry/cytospace/blob/main/images/cell_type_fractions_file.png" width="800"> 
+Also, a name to the "output directory", in order to save the DiSiR results, needs to be provided by the user without double quotations.
 
-                                                                                                                 
-## Preprocessing: Input file preparation
-If you have data in the form of Seurat objects, you can generate files formatted for CytoSPACE input via helper functions we have provided in the `R` script `generate_cytospace_from_seurat_object.R` in `cytospace/Prepare_input_files`. To use these helper functions, first import them from `generate_cytospace_from_seurat_object.R` by including 
-```bash
-  source('/path/to/generate_cytospace_from_seurat_object.R')
-```
-in your R script. 
+                                                                                                                
+## Running DiSiR
+After activating the `disir_package` conda environment via `conda activate disir_package`, DiSiR can be called from the command line from any folder using `disir_package`. Examples on how to run DiSiR are provided in the section "Example datasets for running DiSiR" below.
 
-### From scRNA-seq Seurat object
-For producing CytoSPACE inputs from scRNA Seurat objects, we provide the function `generate_cytospace_from_scRNA_seurat_object` which may be called as
-```bash
-  generate_cytospace_from_scRNA_seurat_object(scRNA_Seurat_Object,dir_out='',fout_prefix='')
-```
-within your R script. The first argument (required) designates your input Seurat object, `dir_out` (optional, default is working directory) specifies the path to the output directory to store the results, and `fout_prefix` (optional, default is none) specifies a prefix to add to output file names, which otherwise are generated as `scRNA_data.txt` and `cell_type_labels.txt`. Please note that `Idents(scRNA_Seurat_Object)` must be set to include cell types.
-
-
-### From Spatial Seurat object
-For producing CytoSPACE inputs from ST Seurat objects, we provide the function `generate_cytospace_from_ST_seurat_object` which may be called as
-```bash
-  generate_cytospace_from_ST_seurat_object(ST_Seurat_Object,dir_out='',fout_prefix='',slice='slice1')
-```
-within your R script. The first argument (required) designates your input Seurat object, `dir_out` (optional, default is working directory) specifies the path to the output directory to store the results, `fout_prefix` (optional, default is none) specifies a prefix to add to output file names, which otherwise are generated as `ST_data.txt` and `Coordinates.txt`, and `slice` (optional, default is `slice1`) provides the name of your slice as stored in your Seurat object.
-
-### From raw Space Ranger outputs
-If you are starting from Space Ranger outputs, an easy way to prepare inputs formatted for CytoSPACE is by loading the Space Ranger outputs into a Seurat object with
-<a href="https://satijalab.org/seurat/reference/load10x_spatial" target="_blank">Load10X_Spatial</a>. Once you have a Seurat object, you can use the helper script provided above.
-
-## Preprocessing: Cell fraction estimation with Seurat v3
-To account for the disparity between scRNA-seq and ST data in the number of cells per cell type, the fractional composition of each cell type in the ST tissue needs to be provided as input to CytoSPACE. This is determined using an external deconvolution tool, such as <a href="https://satijalab.org/seurat/articles/spatial_vignette.html" target="_blank">Spatial Seurat</a>, <a href="https://www.sanger.ac.uk/tool/cell2location/" target="_blank">cell2location</a>, <a href="https://github.com/MarcElosua/SPOTlight" target="_blank">SPOTlight</a>, or <a href="https://cibersortx.stanford.edu/" target="_blank">CIBERSORTx</a>. We have included Spatial Seurat in our benchmarking, and provide here a script to obtain the cell type fractions using this approach.
-
-Run the script `get_cellfracs_seuratv3.R` from command line with the following inputs:
-1. Path to scRNA counts file (same scRNA-seq gene expression matrix input file format as specified in __File format__ section point 1)
-2. Path to cell type labels file (same cell type label input file format as specified above in __File format__ section point  2)
-3. Path to ST data (same ST gene expression matrix input file format as specified above in __File format__ section point  3)
-4. Name of output file
-
-For example:
-```bash
-  Rscript /path/to/get_cellfracs_seuratv3.R melanoma_scRNA_GEP.txt melanoma_scRNA_celllabels.txt melanoma_STdata_slide1_GEP.txt melanoma_cell_fraction_estimates.txt
-```
-
-### Important, please note:
-1. While `cytospace` can be run from any path and folder, the path to `get_cellfracs_seuratv3.R` must be specified in the command. 
-2. __You must run this script within the `cytospace` conda environment.__ This is done using the command `conda activate cytospace`.
-3. We use `Seurat v3` for estimating cell fractions, and this is installed as part of the CytoSPACE environment. If you want to run other analyses using more recent versions of Seurat after running CytoSPACE, for example Seurvat v4, make sure to first __deactivate the CytoSPACE environment__ once you are done running CytoSPACE. This is done using the command `conda deactivate cytospace`.
-4. __We highly recommend using Seurat v3 rather than v4 for cell type fraction estimation.__ Running cell type fraction estimation from within the `cytospace` environment will ensure this. If you would like to check your Seurat version within an R session, you can use the following command:
-```
-library(Seurat)
-packageVersion('Seurat')
-```
-
-## Running CytoSPACE
-After activating the `cytospace` conda environment via `conda activate cytospace`, CytoSPACE can be called from the command line from any folder using `cytospace`. Examples on how to run CytoSPACE are provided in the section "Example datasets for running CytoSPACE" below.
-
-A typical CytoSPACE run with default settings would look like this: 
+A typical DiSiR run with default settings would look like this: 
  ```bash
- cytospace --scRNA-path /path/to/scRNA_geneexpression
-    --cell-type-path /path/to/scRNA_celllabels
-    --st-path /path/to/ST_geneexpression
+ cytospace --scRNA-path /path/to/scRNA_gene_expression
+    --cell-type-path /path/to/scRNA_cell_labels
+    --st-path /path/to/gene_names
     --coordinates-path /path/to/ST_coordinates
     --cell-type-fraction-estimation-path path/to/cellfracestimates
 ```
@@ -136,7 +81,7 @@ Or with more condensed parameter names:
     -ctfep path/to/cellfracestimates
 ```
 
-For full usage details with additional options, see the __Extended usage details__ section below. 
+For full usage details with additional options, see the section "Other input parameters" below. 
 
 ### Choosing a solver
 CytoSPACE provides three solver options. In short, we recommend using the default option `lapjv` if your system supports AVX2 (i.e., if you were able to successfully install it with `pip install lapjv==1.3.14`) and `lap_CSPR` otherwise. No options are required to use the default solver `lapjv`. To use `lap_CSPR` instead, pass the argument `-sm lap_CSPR` to your `cytospace` call. For full solver details, see the __Solver options__ section below.
