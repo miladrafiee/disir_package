@@ -99,8 +99,8 @@ For full usage details with additional options, see the section "Other input par
 ## DiSiR outputs
 DiSiR will produce the following output files by default.
 1. ```expression_info.pdf``` Bubble plot illustrating max-normalized average expressions of the putative signaling pathway components per cell type (color of the circles), and fraction of cells expressing them within its corresponding cell type (size of the circles; adjusted by the total number of cells expressing the respective gene). 
-2. ```Links.csv``` Significant ligand-receptor interactions, and their corresponding strengths, identigfied and by DiSiR. These interactions are the links of the resulting inetraction graph.
-3. ```Nodes.csv``` Cell types names associated with the identified LR intercations listed in the "Links.csv" file.
+2. ```Links.csv``` Significant ligand-receptor interactions, and their corresponding strengths, identified by DiSiR. These interactions are the links of the resulting inetraction graph.
+3. ```Nodes.csv``` Cell type names associated with the identified LR intercations listed in the "Links.csv" file.
 4. ```Heatmap.csv``` and ```Heatmap.pdf``` Heatmap plot illustrating significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
 5. ```Heatmap_all_interactions.csv``` and ```Heatmap_all_interactions.pdf``` Heatmap plot illustrating all interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
 
@@ -123,12 +123,11 @@ Once the example files are downloaded, the commands below can be run from the fo
 ```
 
 ## DiSiR outputs for example RA synovium scRNA-seq data
-The main output from a CytoSPACE run is the file named `assigned_locations.csv`, which provides the ST spots to which the single cells have been assigned. 
+The main outputs from a DiSiR run are the files named `Links.csv` and `Nodes.csv`, which provide the significant ligand-receptor interactions (and their corresponding strengths) identified by DiSiR and cell type names associated with them, respectively.
 
 <img width="600" src="https://github.com/digitalcytometry/cytospace/blob/main/images/assigned_locations.png">
 
-
-The CytoSPACE results are visualized in heatmaps saved as `plot_cell_type_locations.pdf` showing the distribution of single cells across ST spots for each cell type. Color bars indicate the number of cells of the respective cell type inferred per spot. Below are the heatmaps produced for the example BRCA data.
+The DiSiR results are visualized in heatmaps saved as `Heatmap.pdf` illustrating the significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types. Below are the heatmaps produced for the example RA data.
 
 <p align="center">
   <img width="800" src="https://github.com/digitalcytometry/cytospace/blob/main/images/BRCA_plot_cell_type_locations.png">
