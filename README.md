@@ -125,12 +125,10 @@ Once the example files are downloaded, the commands below can be run from the fo
 ## DiSiR outputs for example RA synovium scRNA-seq data
 The main outputs from a DiSiR run are the files named `Links.csv` and `Nodes.csv`, which provide the significant ligand-receptor interactions (and their corresponding strengths) identified by DiSiR and cell type names associated with them, respectively.
 
-<img width="600" src="https://github.com/digitalcytometry/cytospace/blob/main/images/assigned_locations.png">
-
 The DiSiR results are visualized in heatmaps saved as `Heatmap.pdf` illustrating the significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types. Below are the heatmaps produced for the example RA data.
 
 <p align="center">
-  <img width="800" src="https://github.com/digitalcytometry/cytospace/blob/main/images/BRCA_plot_cell_type_locations.png">
+  <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/heatmaps.png" width="1000"> 
 </p>
 
 For comparison, consider the pathologist annotations of this ST sample as provided by 10x:
