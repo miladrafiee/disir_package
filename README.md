@@ -62,16 +62,18 @@ DiSiR requires 4 files as input. All files should be provided in comma-separated
 
 Also, a name to the "output directory", in order to save the DiSiR results, needs to be provided by the user without double quotations.
 
-### Other input parameters
+## Other input parameters
 
-1. `threshold-fraction (-tf)` - Threshold on the fraction of cells expressed each ligand or receptor per cell type (default = 0)
+1. `-threshold-fraction (-tf)` - Threshold on the fraction of cells expressed each ligand or receptor per cell type (default = 0)
  
-2. `threshold-expression (-te)` - Threshold on scaled (max-normalized) average expression of each ligand or receptor within a cell type (default = 0)
+2. `-threshold-expression (-te)` - Threshold on scaled (max-normalized) average expression of each ligand or receptor within a cell type (default = 0)
   
-3. `threshold-pvalue (-tp)` - Threshold on p-value for filtering non-significant LR interactions (default = 0.05)
+3. `-threshold-pvalue (-tp)` - Threshold on p-value for filtering non-significant LR interactions (default = 0.05)
    
-4. `iterations-value (-iv)` - Number of iterations for permutating data in statistical test (default = 1000)
- 
+4. `-iterations-value (-iv)` - Number of iterations for permutating data in statistical test (default = 1000)
+
+To run DiSiR by changing the default parameter values, pass each parameter followed by the correspondong value, for example: `-tf 0.1`, `-te 0.1`, `-tp 0.01` or `-iv 500`.
+
 ## Running DiSiR
 After activating the `disir_package` conda environment via `conda activate disir_package`, DiSiR can be called from the command line from any folder using `disir_package`. Examples on how to run DiSiR are provided in the section "Example datasets for running DiSiR" below.
 
@@ -95,7 +97,7 @@ Or with more condensed parameter names:
 For full usage details with additional options, see the section "Other input parameters" below. 
 
 ## DiSiR outputs
-CytoSPACE will produce five output files by default.
+DiSiR will produce five output files by default.
 1. ```plot_cell_type_locations.pdf``` Heatmaps of cell type assignments within the ST sample. Along with a plot showing the total number of cells mapped to each spot, these show the spatial distribution of cell type assignments. Color bars indicate the number of cells of the respective cell type inferred per spot.
 2. ```assigned_locations.csv``` This file will provide the assigned locations of each single cell mapped to ST spots. As some cells may be mapped to multiple locations depending on the size of the input scRNA-seq set, new cell IDs (`UniqueCID`) are assigned to each cell and given in the first column. The second column includes original cell IDs (`OriginalCID`); the third includes assigned spot IDs (`SpotID`); the fourth and fifth columns respectively include  `row` and `column` indices of the corresponding spots; and then optionally, the sixth and seventh columns include `coord_x` and `coord_y` of the corresponding spots if these details were provided in the initial Coordinates file.
 3. ```cell_type_assignments_by_spot.csv``` This file gives the raw number of cells of each cell type per spot by `SpotID` as well as the total number of cells assigned to that spot.
