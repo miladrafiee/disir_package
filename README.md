@@ -125,36 +125,18 @@ Once the example files are downloaded, the commands below can be run from the fo
 ## DiSiR outputs for example RA synovium scRNA-seq data
 The main outputs from a DiSiR run are the files named `Links.csv` and `Nodes.csv`, which provide the significant ligand-receptor interactions (and their corresponding strengths) identified by DiSiR and cell type names associated with them, respectively.
 
-The DiSiR results are visualized in heatmaps saved as `Heatmap.pdf` illustrating the significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types. Below are the heatmaps produced for the example RA data.
+The DiSiR results are visualized in heatmaps saved as `Heatmap_all.pdf` and `Heatmap.pdf` illustrating all and significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types. Below are the heatmaps produced for the example RA data.
 
 <p align="center">
   <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/heatmaps.png" width="1000"> 
 </p>
 
-For comparison, consider the pathologist annotations of this ST sample as provided by 10x:
+DiSiR also visualizes output cell-cell interactions in two ways: graph representation and heatmap plots. The outputs of running "DiSiR_main.py" are the links and nodes of the resulting interaction interaction graph at cell type level, and heatmap plots for all and significant interactions. Using "links.csv" and "Nodes.csv" (along with "Input_interactions_list.csv") files as the inputs of the "Graph_representation.R" script, which is located in the "Plotting" directory, users can generate a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment.
 
 <p align="center">
   <img width="800" src="https://github.com/digitalcytometry/cytospace/blob/main/images/Visium_FFPE_Human_Breast_Cancer_Pathologist_Annotations.png">
 </p>
-
-The number of cells per spot by cell type as well as in total are provided in the file `cell_type_assignments_by_spot.csv`. Fractional abundances of each cell type are returned in the file `fractional_abundances_by_spot.csv`. A log file recording CytoSPACE inputs and running times is output in the file `log.txt`.
-
-Zip files of expected CytoSPACE outputs (with `lap_CSPR` solver) are available to download at the following links:
-1. <a href="https://drive.google.com/file/d/1CLfy4Txez8ThID8YzIH04hlvrBRCQ4Rh/view?usp=sharing" target="_blank">Breast cancer results</a>
-2. <a href="https://drive.google.com/file/d/1X4jMwctRNmqCRIJcop2hL3jRdlhxnnlc/view?usp=sharing" target="_blank">Melanoma results</a> 
-
-To download from the command line using `gdown`:
-1. Breast cancer
-   ```bash
-   gdown --fuzzy https://drive.google.com/file/d/1CLfy4Txez8ThID8YzIH04hlvrBRCQ4Rh/view?usp=sharing
-   unzip CytoSPACE_example_breast_cancer_results.zip
-   ```
-2. Melanoma
-   ```bash
-   gdown --fuzzy https://drive.google.com/file/d/1X4jMwctRNmqCRIJcop2hL3jRdlhxnnlc/view?usp=sharing
-   unzip CytoSPACE_example_melanoma_results.zip
-   ```
-   
+  
 ## Authors
 DiSiR was developed by
 
