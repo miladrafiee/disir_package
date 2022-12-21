@@ -32,7 +32,7 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
   pip install .
 ``` 
 
-## File formatting
+## File formatting (required inputs)
 DiSiR requires 4 files as input. All files should be provided in comma-separated values input format (saved as .csv) with no double quotations. Further formatting details for each input file are specified below. 
 
 <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/disir_inputs.png" width="1000">
@@ -62,7 +62,16 @@ DiSiR requires 4 files as input. All files should be provided in comma-separated
 
 Also, a name to the "output directory", in order to save the DiSiR results, needs to be provided by the user without double quotations.
 
-                                                                                                                
+### Other input parameters
+
+1. `threshold-fraction (-tf)` - Threshold on the fraction of cells expressed each ligand or receptor per cell type (default = 0)
+ 
+2. `threshold-expression (-te)` - Threshold on scaled (max-normalized) average expression of each ligand or receptor within a cell type (default = 0)
+  
+3. `threshold-pvalue (-tp)` - Threshold on p-value for filtering non-significant LR interactions (default = 0.05)
+   
+4. `iterations-value (-iv)` - Number of iterations for permutating data in statistical test (default = 1000)
+ 
 ## Running DiSiR
 After activating the `disir_package` conda environment via `conda activate disir_package`, DiSiR can be called from the command line from any folder using `disir_package`. Examples on how to run DiSiR are provided in the section "Example datasets for running DiSiR" below.
 
