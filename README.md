@@ -106,22 +106,23 @@ DiSiR will produce the following output files by default.
 
 ## Example datasets for running DiSiR
 For users to test DiSiR, we have included files for two example runs:
-1. [AMP consortium’s Phase 1 RA data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/14hHjAMff3i_nFr4zfkptre-1g9i-s2WF?usp=share_link).
+1. [AMP consortium’s Phase 1 rheumatoid arthritis (RA) data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/14hHjAMff3i_nFr4zfkptre-1g9i-s2WF?usp=share_link).
 2. [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/1UiFeTFB7My7UdsRmuZGHRD6yAM8O-0zV?usp=share_link).
 
 Two of LR subunit interaction files (for IL6/IL11 and IL1RAP signaling pathways) are also provided [here](https://drive.google.com/drive/folders/1yLoV3ai51kI2KWE27rh9beN5Dg3R3Cir?usp=share_link) as an example.
 
 ### Commands for running example analyses:
-Once the example files are downloaded, the commands below can be run from the folders where the example datasets are located:
+Once the example files are downloaded, the commands below can be run from the folders where the example datasets are located (for IL6/IL11 pathway):
+1. RA synovium data:
 ```bash
-  cytospace -sp brca_scRNA_GEP.txt -ctp brca_scRNA_celllabels.txt -stp brca_STdata_GEP.txt -cp brca_STdata_coordinates.txt -ctfep brca_cell_fraction_estimates.txt -o cytospace_results_brca -sm lap_CSPR
+  disir_package -sp scRNA.csv -gp genes.csv -sip subunit_interactions_Cal.csv -ctp cell_type_labels.csv -odp results_RA
+```
+2. COVID data:
+```bash
+  disir_package -sp scRNA.mtx -gp genes.csv -sip subunit_interactions_Cal.csv -ctp cell_type_labels.csv -odp results_COVID 
 ```
 
-```bash
-  cytospace -sp melanoma_scRNA_GEP.txt -ctp melanoma_scRNA_celllabels.txt -stp melanoma_STdata_slide1_GEP.txt -cp melanoma_STdata_slide1_coordinates.txt -ctfep melanoma_cell_fraction_estimates.txt -mcn 20 -o cytospace_results_melanoma -nr 5 -nc 3 -ss 1100 -pm s -nv -sm lap_CSPR 
-```
-
-## DiSiR outputs for example rheumatoid arthritis (RA) synovium scRNA-seq data
+## DiSiR outputs for example RA synovium scRNA-seq data
 The main output from a CytoSPACE run is the file named `assigned_locations.csv`, which provides the ST spots to which the single cells have been assigned. 
 
 <img width="600" src="https://github.com/digitalcytometry/cytospace/blob/main/images/assigned_locations.png">
