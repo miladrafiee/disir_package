@@ -45,18 +45,18 @@ DiSiR requires 4 files as input. All files should be provided in comma-separated
 - Cell type labels corresponding to the single cells (columns) in the scRNA-seq gene expression matrix with the same order. 
 - The table should contain only one column which contains the cell types corresponding to the single cells in the scRNA-seq gene expression matrix with the same order.
 - The columns must not have a header and row names. 
-<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/celllabelfile.png" width="250"> 
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/celllabelfile.png" width="100"> 
 
 3. __A gene name file:__
 - Genes names corresponing to the features (rows) in the scRNA-seq gene expression matrix with the same order.
 - The table should contain only one column that contains the gene names corresponding to the features (rows) in the scRNA-seq gene expression matrix with the same order.
 - The columns must not have a header and row names.
-<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/genesfile.png" width="800"> 
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/genesfile.png" width="100"> 
 
 4. __A ligand-receptor interaction file:__
 - User also needs to provide a comma-separated value (csv) file" that contains one interaction per line, for example: IL6 | IL6, IL6 | IL6ST (in this example, the IL6R and IL6ST are two receptor subunits of the ligand IL6).
 - The columns must not have a header and row names.
-<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/interactionsfile.png" width="250"> 
+<img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/interactionsfile.png" width="200"> 
 
 Also, a name to the "output directory", in order to save the DiSiR results, needs to be provided by the user without double quotations.
 
