@@ -104,29 +104,10 @@ DiSiR will produce the following output files by default.
 4. ```Heatmap.csv``` and ```Heatmap.pdf``` Heatmap plot illustrating significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
 5. ```Heatmap_all_interactions.csv``` and ```Heatmap_all_interactions.pdf``` Heatmap plot illustrating all interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
 
-## Example datasets for running CytoSPACE
+## Example datasets for running DiSiR
 For users to test DiSiR, we have included files for two example runs:
 1. [AMP consortium’s Phase 1 RA data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
 2. [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/u/3/folders/14Y09AmiXegRg_LbCnbZyG4bgw2cypZPj).
-
-
-
-### Download example datasets
-Zip files containing the example datasets can be downloaded from the following links:
-1. <a href="https://drive.google.com/file/d/1ODN7Ux2x9XNl1K8cOLl4JxIZpjJL2GwG/view?usp=sharing" target="_blank">Breast cancer</a>
-2. <a href="https://drive.google.com/file/d/1oHe4UP2K0kQS9gNFVvZtjqtJyJK_VeBp/view?usp=sharing" target="_blank">Melanoma</a> 
-
-To download from the command line using `gdown`:
-1. Breast cancer
-   ```bash
-   gdown --fuzzy https://drive.google.com/file/d/1ODN7Ux2x9XNl1K8cOLl4JxIZpjJL2GwG/view?usp=sharing
-   unzip CytoSPACE_example_breast_cancer.zip
-   ```
-2. Melanoma
-   ```bash
-   gdown --fuzzy https://drive.google.com/file/d/1oHe4UP2K0kQS9gNFVvZtjqtJyJK_VeBp/view?usp=sharing
-   unzip CytoSPACE_example_melanoma.zip
-   ```
    
 ### Commands for running example analyses:
 Once the example files are downloaded, the commands below can be run from the folders where the example datasets are located:
