@@ -105,9 +105,11 @@ DiSiR will produce the following output files by default.
 5. ```Heatmap_all_interactions.csv``` and ```Heatmap_all_interactions.pdf``` Heatmap plot illustrating all interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
 
 ## Example datasets for running CytoSPACE
-For users to test CytoSPACE, we have included files for two example runs:
-1. A HER2+ breast cancer scRNA-seq atlas by Wu et al. (<a href="https://www.nature.com/articles/s41588-021-00911-1" target="_blank">Nature Genetics, 2021</a>) and a HER2+ breast cancer FFPE specimen profiled by the Visium platform (<a href="https://www.10xgenomics.com/resources/datasets/human-breast-cancer-ductal-carcinoma-in-situ-invasive-carcinoma-ffpe-1-standard-1-3-0" target="_blank">10x Genomics</a>). Default parameters were selected with Visium samples in mind and are appropriate here.
-2. A melanoma scRNA-seq atlas by Tirosh et al. (<a href="https://www.science.org/doi/10.1126/science.aad0501?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed" target="_blank">Science, 2016</a>), and a melanoma specimen profiled by the legacy ST platform (Thrane et al, <a href="https://aacrjournals.org/cancerres/article/78/20/5970/631815/Spatially-Resolved-Transcriptomics-Enables" target="_blank">Cancer Research, 2018</a>). As the legacy ST platform has larger spot sizes, we recommend mapping an average of 20 cells per spot, i.e. passing the argument `-mcn 20` to your `cytospace` call.
+For users to test DiSiR, we have included files for two example runs:
+1. [AMP consortium’s Phase 1 RA data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
+2. [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/u/3/folders/14Y09AmiXegRg_LbCnbZyG4bgw2cypZPj).
+
+
 
 ### Download example datasets
 Zip files containing the example datasets can be downloaded from the following links:
