@@ -134,7 +134,7 @@ The DiSiR results are visualized in heatmaps saved as `Heatmap_all.pdf` and `Hea
 DiSiR also visualizes output cell-cell interactions in two ways: graph representation and heatmap plots. The outputs of running "DiSiR_main.py" are the links and nodes of the resulting interaction interaction graph at cell type level, and heatmap plots for all and significant interactions. Using "links.csv" and "Nodes.csv" (along with "Input_interactions_list.csv") files as the inputs of the "Graph_representation.R" script, which is located in the "Plotting" directory, users can generate a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment.
 
 <p align="center">
-  <img width="800" src="https://github.com/digitalcytometry/cytospace/blob/main/images/Visium_FFPE_Human_Breast_Cancer_Pathologist_Annotations.png">
+  <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/graph_chord_representation.png" width="1000"> 
 </p>
   
 ## Authors
