@@ -122,7 +122,7 @@ Once the example files are downloaded, the commands below can be run from the fo
   disir_package -sp scRNA.mtx -gp genes.csv -sip Subunit_interactions_IL6_IL11.csv -ctp cell_type_labels.csv -odp results_COVID 
 ```
 
-## DiSiR outputs for example RA synovium scRNA-seq data
+## DiSiR outputs for example RA synovium scRNA-seq data and IL6 signaling pathway
 The main outputs from a DiSiR run are the files named `Links.csv` and `Nodes.csv`, which provide the significant ligand-receptor interactions (and their corresponding strengths) identified by DiSiR and cell type names associated with them, respectively.
 
 The DiSiR results are visualized in heatmaps saved as `Heatmap_all.pdf` and `Heatmap.pdf` illustrating all and significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types. Below are the heatmaps produced for the example RA data.
