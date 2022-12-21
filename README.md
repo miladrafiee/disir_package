@@ -107,7 +107,7 @@ DiSiR will produce the following output files by default.
 ## Example datasets for running DiSiR
 For users to test DiSiR, we have included files for two example runs:
 1. [AMP consortium’s Phase 1 rheumatoid arthritis (RA) data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/14hHjAMff3i_nFr4zfkptre-1g9i-s2WF?usp=share_link).
-2. [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/1UiFeTFB7My7UdsRmuZGHRD6yAM8O-0zV?usp=share_link).
+2. [Lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/1UiFeTFB7My7UdsRmuZGHRD6yAM8O-0zV?usp=share_link).
 
 Two of LR subunit interaction files (for IL6/IL11 and IL1RAP signaling pathways) are also provided [here](https://drive.google.com/drive/folders/1yLoV3ai51kI2KWE27rh9beN5Dg3R3Cir?usp=share_link) as an example.
 
