@@ -106,8 +106,8 @@ DiSiR will produce the following output files by default.
 
 ## Example datasets for running DiSiR
 For users to test DiSiR, we have included files for two example runs:
-1. [AMP consortium’s Phase 1 RA data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
-2. [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/u/3/folders/14Y09AmiXegRg_LbCnbZyG4bgw2cypZPj).
+1. [AMP consortium’s Phase 1 RA data](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/14hHjAMff3i_nFr4zfkptre-1g9i-s2WF?usp=share_link).
+2. [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the gene expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/1UiFeTFB7My7UdsRmuZGHRD6yAM8O-0zV?usp=share_link).
    
 ### Commands for running example analyses:
 Once the example files are downloaded, the commands below can be run from the folders where the example datasets are located:
