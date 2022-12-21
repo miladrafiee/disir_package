@@ -131,7 +131,9 @@ The DiSiR results are visualized in heatmaps saved as `Heatmap_all.pdf` and `Hea
   <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/heatmaps.png" width="1000"> 
 </p>
 
-DiSiR also visualizes output cell-cell interactions in two ways: graph representation and heatmap plots. The outputs of running "DiSiR_main.py" are the links and nodes of the resulting interaction interaction graph at cell type level, and heatmap plots for all and significant interactions. Using "links.csv" and "Nodes.csv" (along with "Input_interactions_list.csv") files as the inputs of the "Graph_representation.R" script, which is located in the "Plotting" directory, users can generate a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment.
+DiSiR also visualizes output cell-cell interactions in two ways: graph representation and chord diagram representation. The outputs of running "DiSiR_main.py" are the links and nodes of the resulting interaction interaction graph at cell type level, and heatmap plots for all and significant interactions. Using the DiSiR outputs "links.csv" and "Nodes.csv" (along with the putative LR interactions list) files as the inputs of the "Graph_representation.R" script, which is located in the "Plotting" directory, users can generate a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment.
+
+Also, using the DiSiR output "Heatmap.csv" file as the input of the "Chord_diagram_representation.R" script, which is located in the "Plotting" directory, users can generate a chord diagram representation of the resulting interactions at cell type level. We use the “circlize version 0.4.15” package in R for this purpose.
 
 <p align="center">
   <img src="https://github.com/miladrafiee/disir_package/blob/main/Data/ReadMe_images/graph_chord_representation.png" width="1000"> 
@@ -144,6 +146,7 @@ DiSiR was developed by
 * Andre Kurlovs 
 * Virginia Savova 
 * Franck Rapaport
+* Franck Augé
 
 ## License
 DiSiR is licensed under the GNU GPL, version 3 or (at your option) any
