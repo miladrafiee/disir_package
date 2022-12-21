@@ -98,11 +98,11 @@ For full usage details with additional options, see the section "Other input par
 
 ## DiSiR outputs
 DiSiR will produce the following output files by default.
-1. ```expression_info.pdf``` Bubble plot illustrating max-normalized average expressions of the calprotectin signaling pathway components including ligand subunits, S100A8 and S100A9, and the TLR4 receptor, per cell type (color of the circles), and fraction of cells expressing them within its corresponding cell type (size of the circles; adjusted by the total number of cells expressing the respective gene). 
-2. ```Nodes.csv``` This file will provide the assigned locations of each single cell mapped to ST spots. As some cells may be mapped to multiple locations depending on the size of the input scRNA-seq set, new cell IDs (`UniqueCID`) are assigned to each cell and given in the first column. The second column includes original cell IDs (`OriginalCID`); the third includes assigned spot IDs (`SpotID`); the fourth and fifth columns respectively include  `row` and `column` indices of the corresponding spots; and then optionally, the sixth and seventh columns include `coord_x` and `coord_y` of the corresponding spots if these details were provided in the initial Coordinates file.
-4. ```Links.csv``` This file gives the raw number of cells of each cell type per spot by `SpotID` as well as the total number of cells assigned to that spot.
-5. ```Heatmap.csv``` and ```Heatmap.pdf``` This file gives the fractional abundance of cell types assigned to each spot by `SpotID`.
-6. ```Heatmap_all_interactions.csv``` and ```Heatmap_all_interactions.pdf``` This file contains a log of CytoSPACE run parameters and running time.
+1. ```expression_info.pdf``` Bubble plot illustrating max-normalized average expressions of the putative signaling pathway components per cell type (color of the circles), and fraction of cells expressing them within its corresponding cell type (size of the circles; adjusted by the total number of cells expressing the respective gene). 
+2. ```Links.csv``` Significant ligand-receptor interactions, and their corresponding strengths, identigfied and by DiSiR. These interactions are the links of the resulting inetraction graph.
+3. ```Nodes.csv``` Cell types names associated with the identified LR intercations listed in the "Links.csv" file.
+4. ```Heatmap.csv``` and ```Heatmap.pdf``` Heatmap plot illustrating significant interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
+5. ```Heatmap_all_interactions.csv``` and ```Heatmap_all_interactions.pdf``` Heatmap plot illustrating all interactions between different cell types listed in rows and columns of the heatmaps. The color intensity in heatmap representation is associated with the strength of interactions between cell types.
 
 ## Example datasets for running CytoSPACE
 For users to test CytoSPACE, we have included files for two example runs:
