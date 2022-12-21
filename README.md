@@ -121,7 +121,7 @@ Once the example files are downloaded, the commands below can be run from the fo
   cytospace -sp melanoma_scRNA_GEP.txt -ctp melanoma_scRNA_celllabels.txt -stp melanoma_STdata_slide1_GEP.txt -cp melanoma_STdata_slide1_coordinates.txt -ctfep melanoma_cell_fraction_estimates.txt -mcn 20 -o cytospace_results_melanoma -nr 5 -nc 3 -ss 1100 -pm s -nv -sm lap_CSPR 
 ```
 
-### CytoSPACE output files for example breast cancer data
+## DiSiR outputs for example rheumatoid arthritis (RA) synovium scRNA-seq data
 The main output from a CytoSPACE run is the file named `assigned_locations.csv`, which provides the ST spots to which the single cells have been assigned. 
 
 <img width="600" src="https://github.com/digitalcytometry/cytospace/blob/main/images/assigned_locations.png">
@@ -166,12 +166,12 @@ DiSiR was developed by
 * Franck Rapaport
 
 ## License
-CytoSPACE is licensed under the GNU GPL, version 3 or (at your option) any
+DiSiR is licensed under the GNU GPL, version 3 or (at your option) any
 later version.
-CytoSPACE is Copyright (2022-) by the authors.
+DiSiR is Copyright (2022-) by the authors.
 
 ## Citation
-If you use CytoSPACE, please cite:  
+If you use DiSiR, please cite:  
   
 *DiSiR: a software framework to identify ligand-receptor interactions at subunit level from single-cell RNA-sequencing data* (bioxRiv 2022)  
 Milad R. Vahid, Andre Kurlovs, Franck Auge, Reza Olfati-Saber, Emanuele de Rinaldis, Franck Rapaport, Virginia Savova . 
