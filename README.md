@@ -66,41 +66,24 @@ After activating the `disir_package` conda environment via `conda activate disir
 
 A typical DiSiR run with default settings would look like this: 
  ```bash
- cytospace --scRNA-path /path/to/scRNA_gene_expression
+ disir_package --scRNA-path /path/to/scRNA_gene_expression
     --cell-type-path /path/to/scRNA_cell_labels
-    --st-path /path/to/gene_names
-    --coordinates-path /path/to/ST_coordinates
-    --cell-type-fraction-estimation-path path/to/cellfracestimates
+    --gene-path /path/to/gene_names
+    --subunit-interactions-path /path/to/ligand_receptor_interactions
+    --output-directory-path path/to/output_results_directory
 ```
 Or with more condensed parameter names: 
  ```bash
- cytospace -sp /path/to/scRNA_geneexpression
-    -ctp /path/to/scRNA_celllabels
-    -stp /path/to/ST_geneexpression
-    -cp /path/to/ST_coordinates
-    -ctfep path/to/cellfracestimates
+ disir_package --sp /path/to/scRNA_gene_expression
+    --ctp /path/to/scRNA_cell_labels
+    --gp /path/to/gene_names
+    --sip /path/to/ligand_receptor_interactions
+    --odp path/to/output_results_directory
 ```
 
 For full usage details with additional options, see the section "Other input parameters" below. 
 
-### Choosing a solver
-CytoSPACE provides three solver options. In short, we recommend using the default option `lapjv` if your system supports AVX2 (i.e., if you were able to successfully install it with `pip install lapjv==1.3.14`) and `lap_CSPR` otherwise. No options are required to use the default solver `lapjv`. To use `lap_CSPR` instead, pass the argument `-sm lap_CSPR` to your `cytospace` call. For full solver details, see the __Solver options__ section below.
-
-
-### Other ways CytoSPACE can be run:
-1. You can call the `cytospace.py` script directly with python:
- `  python cytospace/cytospace.py`
- 
-2. You can import methods or functions from `CytoSPACE` in python and modify/create your own 
-    pipeline. For example:
-```python
-  from cytospace import cytospace
-
-  for mean_cell_numbers in [5, 10, 20]:
-      cytospace(..., mean_cell_numbers=mean_cell_numbers)
-```
-
-## CytoSPACE outputs
+## DiSiR outputs
 CytoSPACE will produce five output files by default.
 1. ```plot_cell_type_locations.pdf``` Heatmaps of cell type assignments within the ST sample. Along with a plot showing the total number of cells mapped to each spot, these show the spatial distribution of cell type assignments. Color bars indicate the number of cells of the respective cell type inferred per spot.
 2. ```assigned_locations.csv``` This file will provide the assigned locations of each single cell mapped to ST spots. As some cells may be mapped to multiple locations depending on the size of the input scRNA-seq set, new cell IDs (`UniqueCID`) are assigned to each cell and given in the first column. The second column includes original cell IDs (`OriginalCID`); the third includes assigned spot IDs (`SpotID`); the fourth and fifth columns respectively include  `row` and `column` indices of the corresponding spots; and then optionally, the sixth and seventh columns include `coord_x` and `coord_y` of the corresponding spots if these details were provided in the initial Coordinates file.
