@@ -115,11 +115,11 @@ Two of LR subunit interaction files (for IL6/IL11 and IL1RAP signaling pathways)
 Once the example files are downloaded, the commands below can be run from the folders where the example datasets are located (for IL6/IL11 pathway):
 1. RA synovium data:
 ```bash
-  disir_package -sp scRNA.csv -gp genes.csv -sip subunit_interactions_Cal.csv -ctp cell_type_labels.csv -odp results_RA
+  disir_package -sp scRNA.csv -gp genes.csv -sip Subunit_interactions_IL6_IL11.csv -ctp cell_type_labels.csv -odp results_RA
 ```
 2. COVID data:
 ```bash
-  disir_package -sp scRNA.mtx -gp genes.csv -sip subunit_interactions_Cal.csv -ctp cell_type_labels.csv -odp results_COVID 
+  disir_package -sp scRNA.mtx -gp genes.csv -sip Subunit_interactions_IL6_IL11.csv -ctp cell_type_labels.csv -odp results_COVID 
 ```
 
 ## DiSiR outputs for example RA synovium scRNA-seq data
