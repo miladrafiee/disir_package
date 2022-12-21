@@ -27,6 +27,7 @@ def argument_parser():
                         default=0)
     parser.add_argument("-tp", "--threshold-pvalue", help="Threshold on p-value for filtering non-significant LR interactions", type=float, 
                         default=0.05)
+    parser.add_argument("-sm", "--sparse-matrix", help="Use sparse scRNA matrix (for big input scRNA data) in the Harwell-Boeing or MatrixMarket (.mtx) format", action="store_true")
 
     arguments = parser.parse_args()
 
