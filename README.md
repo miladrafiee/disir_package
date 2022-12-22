@@ -117,9 +117,10 @@ Once the example files are downloaded, the commands below can be run from the fo
 ```bash
   disir_package -sp scRNA.csv -gp genes.csv -sip Subunit_interactions_IL6_IL11.csv -ctp cell_type_labels.csv -odp results_RA
 ```
-2. COVID data:
+2. COVID data: 
+Since the input scRNA-seq data is very big in this case, we have saved the input data as a .mtx matrix (scRNA.mtx) which used for big sparse matrices. DiSiR can handle this file format by setting the parameter `sparse-matrix (-sm)` as below:
 ```bash
-  disir_package -sp scRNA.mtx -gp genes.csv -sip Subunit_interactions_IL6_IL11.csv -ctp cell_type_labels.csv -odp results_COVID 
+  disir_package -sm -sp scRNA.mtx -gp genes.csv -sip Subunit_interactions_IL6_IL11.csv -ctp cell_type_labels.csv -odp results_COVID 
 ```
 
 ## DiSiR outputs for example RA synovium scRNA-seq data and IL6 signaling pathway
