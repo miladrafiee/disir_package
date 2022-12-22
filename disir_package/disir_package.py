@@ -434,7 +434,7 @@ def plot_heatmaps(heatmaps, cellstates, output_directory_path):
 
 
 def main_disir(subunit_interactions_path, gene_path, cell_type_path, scRNA_path, output_directory_path,
-                   iteration_value = 1000, threshold_fraction = 0, threshold_expression = 0, threshold_pvalue = 0.05):
+                   iteration_value = 1000, threshold_fraction = 0, threshold_expression = 0, threshold_pvalue = 0.05, sparse_matrix = False):
     
     ###############################################################################
     ################################ Set user INPUTS ##############################
@@ -463,7 +463,13 @@ def main_disir(subunit_interactions_path, gene_path, cell_type_path, scRNA_path,
     
     print('Read and validate data ...')
     
-    scRNA_array = pd.read_csv(scRNA_path, header = None, index_col = None).to_numpy()
+    if sparse_matrix:
+        scRNA_data = mmread(scRNA_path)
+        scRNA_array = scRNA_data.toarray()
+        scRNA_array = np.transpose(scRNA_array)
+    else:
+        scRNA_array = pd.read_csv(scRNA_path, header = None, index_col = None).to_numpy()
+        
     cell_type_labels_raw = pd.read_csv(cell_type_path, header = None, index_col = None)
     cell_type_labels = list(cell_type_labels_raw.iloc[:,0])
     # import sys
