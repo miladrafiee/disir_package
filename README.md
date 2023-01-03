@@ -147,6 +147,7 @@ DiSiR was developed by
 * Andre Kurlovs 
 * Virginia Savova 
 * Franck Rapaport
+* Tommaso Andreani
 * Franck Augé
 
 ## License
