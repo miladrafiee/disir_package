@@ -13,7 +13,7 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 
 2. Clone this repository:
 ```bash
-  git clone https://github.com/miladrafiee/disir_package.git.
+  git clone https://github.com/miladrafiee/disir_package.git
 ```
 3. Navigate to `disir_package` directory:
 ```bash
