@@ -158,6 +158,6 @@ DiSiR is Copyright (2022-) by the authors.
 ## Citation
 If you use DiSiR, please cite:  
   
-*DiSiR: a software framework to identify ligand-receptor interactions at subunit level from single-cell RNA-sequencing data* (bioxRiv 2022)  
-Milad R. Vahid, Andre Kurlovs, Franck Auge, Reza Olfati-Saber, Emanuele de Rinaldis, Franck Rapaport, Virginia Savova . 
-doi: https://doi.org/10.1101/2022.03.25.485741
+*DiSiR: fast and robust method to identify ligand–receptor interactions at subunit level from single-cell RNA-sequencing data* (NAR Genomics and Bioinformatics 2023)  
+Milad R. Vahid, Andre Kurlovs, Tommaso Andreani, Franck Auge, Reza Olfati-Saber, Emanuele de Rinaldis, Franck Rapaport, Virginia Savova . 
+doi: https://doi.org/10.1093/nargab/lqad030
